@@ -20,7 +20,7 @@ abbr b btop
 abbr e exit
 
 # dotfile
-alias dotfiles='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+abbr dotfiles 'git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 abbr snvim sudo -E nvim
 
@@ -37,7 +37,8 @@ abbr sdisable sudo systemctl disable
 abbr sstatus sudo systemctl status
 
 # 显示器管理
-abbr mec hyprctl keyword monitor "eDP-1,disable"
-abbr meo hyprctl keyword monitor "eDP-1,preferred,0x0,1.25"
-abbr mhc hyprctl keyword monitor "HDMI-A-1,disable"
-abbr mho hyprctl keyword monitor "HDMI-A-1,1920x1080@200.00Hz,auto,1"
+abbr mec bash $HOME/Script/monitor_control.sh mec
+abbr meo bash $HOME/Script/monitor_control.sh meo
+abbr mhc bash $HOME/Script/monitor_control.sh mhc
+abbr mho bash $HOME/Script/monitor_control.sh mho
+abbr mhr bash $HOME/Script/monitor_control.sh mhr

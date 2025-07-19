@@ -1,9 +1,22 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["custom/music"],
-  "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray"],
+  "modules-left": [
+    "hyprland/workspaces", 
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "custom/music"
+    // "cava"
+  ],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "memory",
+    "backlight",
+    "battery",
+    "clock"
+  ],
   "hyprland/workspaces": {
     "all-outputs": true,
     "on-scroll-up": "hyprctl dispatch workspace -1",
@@ -12,24 +25,20 @@
       "1": []
     },
     "format": "{icon} {windows}",
-    // "format-window-separator": "\n",
     "window-rewrite-default": "",
     "window-rewrite": {
+      "title<.*nvim.*|fish>": "",
+      "title<rmpc.*|musicfox.*>": "",
       "class<kitty>": "",
       "class<qq>": "",
       "class<zen-browser>": "",
       "class<wechat>": "",
-      "class<org.telegram.desktop>": "",
-      "class<kitty> title<.*nvim.*|fish>": "",
-      "class<kitty> title<rmpc.*|musicfox.*>": ""
-    },
-    "format-icons": {
-      // "active": "",
-      // "urgent": ""
+      "class<org.telegram.desktop>": ""
     }
    },
 	"hyprland/window": {
-    "width": 10,
+    "swap-icon-label": false,
+    "max-length": 30,
     "icon" : true,
 		"format": "{class} -> {title}"
 	},
@@ -45,6 +54,41 @@
     "exec": "playerctl metadata --format='{{ title }}'",
     "on-click": "playerctl play-pause",
     "max-length": 50
+  },
+
+  "cava": {
+    // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "framerate": 30,
+    "autosens": 1,
+    // "sensitivity": 100,
+    "bars": 12,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "hide_on_silence": false,
+    "format_silent": "^v^",
+    "method": "pipewire",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "actions": {
+      "on-click-right": "mode"
+     }
+  },
+
+  "memory": {
+    "interval": 10,
+    "format": " {percentage}%",
+    "format-alt": " {used:0.1f}G/{total:0.1f}G",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
   },
   "clock": {
     "timezone": "Asia/Shanghai",
