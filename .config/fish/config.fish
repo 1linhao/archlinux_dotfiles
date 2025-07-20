@@ -20,8 +20,36 @@ abbr b btop
 abbr e exit
 
 # dotfile
-abbr dotfiles 'git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+function df -d "Manage dotfiles with git"
+  set -l DOTFILES_DIR "$HOME/dotfiles/"
+  set -l WORK_TREE "$HOME"
+  set -l DOTFILES \
+    ../.bashrc \
+    ../.config/fcitx5/ \
+    ../.config/fontconfig/ \
+    ../.config/fish/config.fish \
+    ../.config/hypr/ \
+    ../.config/kitty/ \
+    ../.config/mako/ \
+    ../.config/mpd/mpd.conf \
+    ../.config/ncmpcpp/bindings \
+    ../.config/ncmpcpp/config \
+    ../.config/rmpc/ \
+    ../.config/rofi/ \
+    ../.config/waybar/ \
+    ../.config/yazi/
 
+  switch $argv[1]
+    case add
+      git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE add $DOTFILES
+    case restore
+      git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE restore --staged $DOTFILES
+    case '*'
+      git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE $argv
+  end
+end
+
+# neovim
 abbr snvim sudo -E nvim
 
 # systemctl
