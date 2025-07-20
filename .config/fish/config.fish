@@ -24,24 +24,25 @@ function df -d "Manage dotfiles with git"
   set -l DOTFILES_DIR "$HOME/dotfiles/"
   set -l WORK_TREE "$HOME"
   set -l DOTFILES \
-    ../.bashrc \
-    ../.config/fcitx5/ \
-    ../.config/fontconfig/ \
-    ../.config/fish/config.fish \
-    ../.config/hypr/ \
-    ../.config/kitty/ \
-    ../.config/mako/ \
-    ../.config/mpd/mpd.conf \
-    ../.config/ncmpcpp/bindings \
-    ../.config/ncmpcpp/config \
-    ../.config/rmpc/ \
-    ../.config/rofi/ \
-    ../.config/waybar/ \
-    ../.config/yazi/
+    $HOME/.bashrc \
+    $HOME/.config/fcitx5/*\
+    $HOME/.config/fontconfig/*\
+    $HOME/.config/fish/config.fish \
+    $HOME/.config/hypr/*\
+    $HOME/.config/kitty/*\
+    $HOME/.config/mako/*\
+    $HOME/.config/mpd/mpd.conf \
+    $HOME/.config/ncmpcpp/bindings \
+    $HOME/.config/ncmpcpp/config \
+    $HOME/.config/rmpc/*\
+    $HOME/.config/rofi/*\
+    $HOME/.config/waybar/*\
+    $HOME/.config/yazi/*\
+    $HOME/Script/*
 
   switch $argv[1]
     case add
-      git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE add $DOTFILES
+      git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE add -f $DOTFILES
     case restore
       git --git-dir=$DOTFILES_DIR --work-tree=$WORK_TREE restore --staged $DOTFILES
     case '*'
