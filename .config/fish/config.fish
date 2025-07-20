@@ -25,19 +25,20 @@ function df -d "Manage dotfiles with git"
   set -l WORK_TREE "$HOME"
   set -l DOTFILES \
     $HOME/.bashrc \
-    $HOME/.config/fcitx5/*\
-    $HOME/.config/fontconfig/*\
+    $HOME/.config/fcitx5/* \
+    $HOME/.config/fontconfig/* \
     $HOME/.config/fish/config.fish \
-    $HOME/.config/hypr/*\
-    $HOME/.config/kitty/*\
-    $HOME/.config/mako/*\
+    $HOME/.config/hypr/* \
+    $HOME/.config/kitty/* \
+    $HOME/.config/mako/* \
     $HOME/.config/mpd/mpd.conf \
     $HOME/.config/ncmpcpp/bindings \
     $HOME/.config/ncmpcpp/config \
-    $HOME/.config/rmpc/*\
-    $HOME/.config/rofi/*\
-    $HOME/.config/waybar/*\
-    $HOME/.config/yazi/*\
+    $HOME/.config/nvim/* \
+    $HOME/.config/rmpc/* \
+    $HOME/.config/rofi/* \
+    $HOME/.config/waybar/* \
+    $HOME/.config/yazi/* \
     $HOME/Script/*
 
   switch $argv[1]
