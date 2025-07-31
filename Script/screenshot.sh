@@ -51,7 +51,7 @@ case "$1" in
         # 截全屏并置顶以辅助区域选择
         grim -o "$CURRENT_MONITOR" - | feh --no-fehbg --fullscreen - &
         FEH_PID=$!
-        sleep 0.1
+        sleep 0.05
         # 选取区域并截图
         grim -g "$(slurp)" "$FILE"
         kill $FEH_PID 2>/dev/null

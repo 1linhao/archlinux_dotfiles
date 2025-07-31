@@ -44,6 +44,7 @@
 }
 
 #memory,
+#cpu,
 #window,
 #custom-music,
 #cava,
@@ -64,11 +65,27 @@
 }
 
 #memory.warning {
-  color: @peach;
+  color: @surface0;
+  background-color: @yellow;
 }
 
 #memory.critical {
-  color: @red;
+  color: @surface0;
+  background-color: @red;
+}
+
+#cpu {
+  color: @sapphire;
+}
+
+#cpu.warning {
+  color: @surface0;
+  background-color: @yellow;
+}
+
+#cpu.critical {
+  color: @surface0;
+  background-color: @red;
 }
 
 #window {

@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set -gx PATH $PATH ~/.local/share/nvim/mason/bin/
+
 # yazi 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")

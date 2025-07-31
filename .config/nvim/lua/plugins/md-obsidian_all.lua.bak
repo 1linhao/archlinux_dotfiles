@@ -1,5 +1,3 @@
-if true then return {} end
-
 -- obsidian.nvim 配置 (适配 lazy.nvim)
 return {
   "epwalsh/obsidian.nvim",

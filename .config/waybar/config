@@ -5,15 +5,15 @@
     "hyprland/workspaces", 
     "hyprland/window"
   ],
-  "modules-center": [
-    "custom/music"
-    // "cava"
-  ],
+  // "modules-center": [
+  //   "custom/music",
+  //   "cava"
+  // ],
   "modules-right": [
     "tray",
     "pulseaudio",
+    "cpu",
     "memory",
-    "backlight",
     "battery",
     "clock"
   ],
@@ -27,11 +27,12 @@
     "format": "{icon} {windows}",
     "window-rewrite-default": "",
     "window-rewrite": {
-      "title<.*nvim.*|fish>": "",
-      "title<rmpc.*|musicfox.*>": "",
       "class<kitty>": "",
+      "class<kitty> title<.*nvim.*|fish>": "",
+      "class<kitty> title<rmpc.*|musicfox.*>": "",
+      "class<steam>": "",
       "class<qq>": "",
-      "class<zen-browser>": "",
+      "class<zen-browser>": "󰈹",
       "class<wechat>": "",
       "class<org.telegram.desktop>": ""
     }
@@ -90,17 +91,24 @@
 			"critical": 90
 		}
   },
+
+	"cpu": {
+		"interval": 5,
+		"tooltip": false,
+		"format": " {usage}%",
+		"format-alt": " {load}",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+
   "clock": {
     "timezone": "Asia/Shanghai",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "󰙹 {:%d/%m/%Y}",
-    "format": "󱑁 {:%H:%M}"
+    "format": "󰙹 {:%Y/%m/%d %a  󰥔 %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""]
-  },
+
   "battery": {
 		"interval": 10,
 		"states": {

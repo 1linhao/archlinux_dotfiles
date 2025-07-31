@@ -6,7 +6,7 @@ edit = [
 	{ run = 'nvim "$@"', block = true, for = "linux" },
 ]
 image = [
-	{ run = 'swayimg "$@"', orphan = true, for = "linux" },
+	{ run = 'swayimg "$@"', block = true, for = "linux" },
 ]
 open = [ ]
 

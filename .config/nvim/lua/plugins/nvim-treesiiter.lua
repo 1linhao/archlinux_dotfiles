@@ -10,7 +10,7 @@ return {
   event = "VeryLazy",
   opts = {
     -- 指定安装哪些parser
-    ensure_installed = { "markdown", "lua", "bash", "json", "yaml", "xml", "html", "c", "java" },
+    ensure_installed = { "markdown", "lua", "bash", "json", "yaml", "xml", "html", "c", "java", "qmljs" },
     -- 开启代码高亮
     highlight = { enable = true },
     fold = { enable = true }

@@ -1,6 +1,7 @@
 -- 显示代码上下文
 return {
   "nvim-treesitter/nvim-treesitter-context",
+  event = "VeryLazy",
   config = function()
     require("treesitter-context").setup({
       enable = true,

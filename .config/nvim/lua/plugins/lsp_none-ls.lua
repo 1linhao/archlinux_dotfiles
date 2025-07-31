@@ -4,6 +4,7 @@
 return {
   "nvimtools/none-ls.nvim",
   dependencies = {
+    "mason-org/mason.nvim",
     "nvim-lua/plenary.nvim",  -- 优化或添加lua标准库的一些功能
   },
   event = "VeryLazy",

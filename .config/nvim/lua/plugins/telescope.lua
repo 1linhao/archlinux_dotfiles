@@ -12,6 +12,25 @@ return {
   },
   cmd = "Telescope",
   opts = {
+    
+    defaults = {
+      layout_strategy = "vertical",  -- 使用垂直布局，便于阅读
+      mappings = {
+        i = {
+          ["<C-j>"] = require("telescope.actions").move_selection_next,
+          ["<C-k>"] = require("telescope.actions").move_selection_previous,
+          ["<CR>"] = require("telescope.actions").select_default,
+          ["<C-c>"] = require("telescope.actions").close,
+        },
+      },
+    },
+    pickers = {
+      obsidian = {
+        prompt_title = "Obsidian Notes",  -- 自定义标题
+        sorter = require("telescope.sorters").get_fuzzy_file(),  -- 模糊搜索
+      },
+    },
+
     extensions = {
       fzf = {
         fuzzy = true,

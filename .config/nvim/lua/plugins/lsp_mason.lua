@@ -31,11 +31,25 @@ return {
 
       -- 取消lsp的格式化功能，格式化由none-ls实现
       -- on_attach函数会在lsp被附加到buffer时执行
-      config.on_attach = function (client)
+      config.on_attach = function (client, bufnr)
         -- 规定server_capabilities应该支持什么功能
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
+        -- 添加 gd 映射用于跳转
+        if lsp == "markdown_oxide" then
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Go to definition" })
+        end
       end
+
+      -- 为 markdown-oxide 添加特定配置
+      if lsp == "markdown_oxide" then
+        config.settings = {
+          workspace = {
+            path = "~/Public/share/obsidian",  -- 笔记库路径
+          },
+        }
+      end
+
       -- 启动lsp，将lsp附加到buffer上
       vim.lsp.config(lsp, config)
     end
@@ -60,6 +74,7 @@ return {
       ["emmet-ls"] = {},
       ["markdown-oxide"] = {},
       ["json-lsp"] = {},
+      qmlls = {},
     }
 
     -- 通过循环启动lsp
@@ -93,7 +108,5 @@ return {
       virtual_text = true
       }
     )
-    -- 在insert模式下更新诊断信息
-    vim.diagnostic.config({ update_in_insert = true })
   end,
 }

@@ -1,7 +1,6 @@
 -- 图片渲染
 return {
   "3rd/image.nvim",
-  event = "VeryLazy",
   ft = "markdown",
   opts = {
     backend = "kitty",
