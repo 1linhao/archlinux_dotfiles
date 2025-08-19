@@ -8,6 +8,10 @@ edit = [
 image = [
 	{ run = 'swayimg "$@"', block = true, for = "linux" },
 ]
+odg = [
+  { run = 'libreoffic --draw "$@", block = true, for = "linux"'},
+]
+
 open = [ ]
 
 [open]
@@ -16,4 +20,5 @@ prepend_rules = [
   { mime = "video/*", use = "play" },
   { mime = "audio/*", use = "play" },
   { mime = "image/*", use = "image" },
+  { mime = "application/oasis.opendocument.graphics", use = "odg" },
 ]

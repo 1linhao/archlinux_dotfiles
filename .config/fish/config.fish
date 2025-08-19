@@ -30,16 +30,16 @@ function df -d "Manage dotfiles with git"
     $HOME/.config/fcitx5/* \
     $HOME/.config/fontconfig/* \
     $HOME/.config/fish/config.fish \
-    $HOME/.config/hypr/* \
+    # $HOME/.config/hypr/* \
     $HOME/.config/kitty/* \
-    $HOME/.config/mako/* \
+    # $HOME/.config/mako/* \
     $HOME/.config/mpd/mpd.conf \
     $HOME/.config/ncmpcpp/bindings \
     $HOME/.config/ncmpcpp/config \
     $HOME/.config/nvim/* \
     $HOME/.config/rmpc/* \
-    $HOME/.config/rofi/* \
-    $HOME/.config/waybar/* \
+    # $HOME/.config/rofi/* \
+    # $HOME/.config/waybar/* \
     $HOME/.config/yazi/* \
     $HOME/Script/*
 

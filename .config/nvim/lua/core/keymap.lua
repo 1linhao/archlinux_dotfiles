@@ -16,6 +16,12 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- 窗口
 keymap.set("n", "<leader>sv", "<C-w>v") -- 垂直新增窗口
 keymap.set("n", "<leader>sh", "<C-w>s") -- 水平新增窗口
+keymap.set("n", "<C-h>", "<C-w>h") -- 跳转到左窗口
+keymap.set("n", "<C-j>", "<C-w>j") -- 跳转到下窗口
+keymap.set("n", "<C-k>", "<C-w>k") -- 跳转到上窗口
+keymap.set("n", "<C-l>", "<C-w>l") -- 跳转到右窗口
+keymap.set("n", "<C-j>", "<C-w>j") -- 跳转到左窗口
+keymap.set("n", "<C-c>", "<C-w>c") -- 关闭当前窗口
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")

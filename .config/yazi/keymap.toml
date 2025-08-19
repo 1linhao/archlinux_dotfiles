@@ -1,36 +1,41 @@
 [mgr]
 prepend_keymap = [
   # 进入终端
-  { on = "!", run = 'shell "fish" --block', desc = "Open shell here" },
+  { on = "!", run = 'shell "fish" --block' },
   # 压缩文档
-  { on = [ "c", "a" ], run = "plugin compress", desc = "Archive selected files" },
+  { on = [ "c", "a" ], run = "plugin compress" },
   # 文档目录
-  { on = [ "g", "d", "d" ], run = "cd /home/lh/Downloads", desc = "goto Downloads" },
-  { on = [ "g", "d", "p", "g" ], run = "cd /home/lh/Pictures/Gallery", desc = "goto Gallery" },
-  { on = [ "g", "d", "p", "s" ], run = "cd /home/lh/Pictures/Screenshots", desc = "goto ScreenShot" },
-  { on = [ "g", "d", "p", "p" ], run = "cd /home/lh/Pictures", desc = "goto Pictures" },
-  { on = [ "g", "d", "v", "r" ], run = "cd /home/lh/Videos/Recording", desc = "goto Videos/Recording" },
-  { on = [ "g", "d", "v", "v" ], run = "cd /home/lh/Videos", desc = "goto Videos" },
-  { on = [ "g", "d", "m" ], run = "cd /home/lh/Music", desc = "goto Music" },
-  { on = [ "g", "d", "o" ], run = "cd /home/lh/Public/share/obsidian", desc = "goto Obsidian" },
-  { on = [ "g", "d", "s", "w" ], run = "cd /home/lh/.steam/steam/steamapps/workshop/content/431960", desc = "goto todolist" },
-  { on = [ "g", "d", "t" ], run = "cd /home/lh/Documents/markdown", desc = "goto WallpaperEngineData" },
-  # 配置目录
-  { on = [ "g", "c", "y" ], run = "cd /home/lh/.config/yazi", desc = "goto config/yazi" },
-  { on = [ "g", "c", "k" ], run = "cd /home/lh/.config/kitty", desc = "goto config/kitty" },
-  { on = [ "g", "c", "h" ], run = "cd /home/lh/.config/hypr", desc = "goto config/hyprland" },
-  { on = [ "g", "c", "n" ], run = "cd /home/lh/.config/nvim", desc = "goto config/nvim" },
-  { on = [ "g", "c", "c" ], run = "cd /home/lh/.config", desc = "goto config" },
-  { on = [ "g", "c", "f" ], run = "cd /home/lh/.config/fish", desc = "goto config/fish" },
-  { on = [ "g", "c", "g" ], run = "cd /home/lh/.config/ghostty", desc = "goto config/ghostty" },
-  { on = [ "g", "c", "w" ], run = "cd /home/lh/.config/waybar", desc = "goto config/waybar" },
-  { on = [ "g", "c", "r" ], run = "cd /home/lh/.config/rofi", desc = "goto config/rofi" },
-  # share目录
-  { on = [ "g", "s", "u" ], run = "cd /home/lh/.local/share", desc = "goto lh/share" },
-  { on = [ "g", "s", "r" ], run = "cd /usr/share", desc = "goto usr/share" },
-  { on = [ "g", "s", "w" ], run = "cd /home/lh/.local/share/WeChat_Data", desc = "goto WechatData" },
+  { on = [ "g", "d", "d" ], run = "cd /home/lh/Downloads" },
+  { on = [ "g", "d", "p", "p" ], run = "cd /home/lh/Pictures" },
+  { on = [ "g", "d", "p", "g" ], run = "cd /home/lh/Pictures/Gallery" },
+  { on = [ "g", "d", "p", "w" ], run = "cd /home/lh/Pictures/Wallpapers" },
+  { on = [ "g", "d", "p", "s" ], run = "cd /home/lh/Pictures/Screenshots" },
+  { on = [ "g", "d", "v", "v" ], run = "cd /home/lh/Videos" },
+  { on = [ "g", "d", "v", "r" ], run = "cd /home/lh/Videos/Recording" },
+  { on = [ "g", "d", "m" ], run = "cd /home/lh/Music" },
+  { on = [ "g", "d", "o" ], run = "cd /home/lh/Public/share/obsidian" },
+  # config目录
+  { on = [ "g", "c", "c" ], run = "cd /home/lh/.config" },
+  { on = [ "g", "c", "y" ], run = "cd /home/lh/.config/yazi" },
+  { on = [ "g", "c", "g" ], run = "cd /home/lh/.config/go-musicfox" },
+  { on = [ "g", "c", "k" ], run = "cd /home/lh/.config/kitty" },
+  { on = [ "g", "c", "h" ], run = "cd /home/lh/.config/hypr" },
+  { on = [ "g", "c", "n" ], run = "cd /home/lh/.config/nvim" },
+  { on = [ "g", "c", "f" ], run = "cd /home/lh/.config/fish" },
+  # cache目录
+  { on = [ "g", "C", "C" ], run = "cd /home/lh/.cache" },
+  { on = [ "g", "C", "g" ], run = "cd /home/lh/.cache/go-musicfox" },
   # local目录
-  { on = [ "g", "l" ], run = "cd /home/lh/.local", desc = "goto .local" },
+  { on = [ "g", "l", "s" ], run = "cd /home/lh/.local/share" },
+  { on = [ "g", "l", "t" ], run = "cd /home/lh/.local/state" },
+  # share目录
+  { on = [ "g", "s", "u" ], run = "cd /home/lh/.local/share" },
+  { on = [ "g", "s", "r" ], run = "cd /usr/share" },
+  { on = [ "g", "s", "w" ], run = "cd /home/lh/.local/share/WeChat_Data" },
+  # 程序目录
+  ## WallpaperEngineData for steam
+  { on = [ "g", "a", "s", "w" ], run = "cd /home/lh/.steam/steam/steamapps/workshop/content/431960" },
+
   # simple-mtp
   # simple-mtpfs plugin
   # { on = [ "M", "m" ], run = "plugin simple-mtpfs -- select-then-mount", desc = "Select device then mount" },
