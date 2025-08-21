@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 屏幕截图脚本：screenshot.sh
-# 功能：支持全屏截图（当前显示器）、区域截图和OCR功能
-# 输出：保存截图到文件或将OCR结果复制到剪贴板，并发送通知
+# 功能：支持全屏截图（当前显示器）和区域截图
+# 输出：保存截图到文件并复制到剪贴板，然后发送通知
 # 环境：Arch Linux + Hyprland + Wayland
 
 # 配置截图保存目录
@@ -56,28 +56,8 @@ case "$1" in
         grim -g "$(slurp)" "$FILE"
         kill $FEH_PID 2>/dev/null
         ;;
-    ocr)
-        MODE="OCR截图"
-        # 截全屏并置顶以辅助区域选择
-        grim -o "$CURRENT_MONITOR" - | feh --no-fehbg --fullscreen - &
-        FEH_PID=$!
-        sleep 0.1
-        # 选取区域并截图
-        grim -g "$(slurp)" "$FILE"
-        kill $FEH_PID 2>/dev/null
-        # 使用 tesseract 进行 OCR
-        RUST=$(tesseract "$FILE" stdout --oem 1 --psm 6 -l eng 2>/dev/null)
-        if [ -n "$RUST" ]; then
-            echo -n "$RUST" | wl-copy
-            notify-send "OCR完成" "文本已复制到剪贴板"
-        else
-            notify-send "OCR失败" "未能识别文本"
-        fi
-        rm -f "$FILE"
-        exit 0
-        ;;
     *)
-        notify-send "错误" "无效参数：请使用 'full', 'space' 或 'ocr'"
+        notify-send "错误" "无效参数：请使用 'full'或 'space'"
         exit 1
         ;;
 esac
